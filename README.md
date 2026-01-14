@@ -111,8 +111,9 @@ Thread-safe message passing channels (similar to Go channels) with blocking and 
 Each project has its own Makefile:
 
 ```bash
-cd p[X]-*/p[X]-temp/p[X]-*/
-make
+cd p1-memory-management && make
+cd p2-page-tables && make
+cd p3-concurrent-channels && make
 ```
 
 ## Project Structure
@@ -120,21 +121,18 @@ make
 ```
 CMPSC473_projects/
 ├── p1-memory-management/
-│   └── p1-temp/p1-memory-management/
-│       ├── mm.c              # Allocator implementation
-│       ├── memlib.c          # Heap simulation
-│       ├── mdriver.c         # Test driver
-│       └── traces/           # Test workloads
-├── p2-thread-scheduler/
-│   └── p2-temp/p2-thread-scheduler/
-│       └── kernel/
-│           ├── kernel_code.c # Page table setup
-│           ├── kernel.c      # Kernel main
-│           └── kernel_asm.S  # Assembly routines
-└── p3-system-call-interface/
-    └── p3-temp/p3-system-call-interface/
-        ├── channel.c         # Channel implementation
-        ├── buffer.c          # Bounded buffer
-        ├── linked_list.c     # List for select()
-        └── stress.c          # Stress tests
+│   ├── mm.c              # Allocator implementation
+│   ├── memlib.c          # Heap simulation
+│   ├── mdriver.c         # Test driver
+│   └── traces/           # Test workloads
+├── p2-page-tables/
+│   └── kernel/
+│       ├── kernel_code.c # Page table setup
+│       ├── kernel.c      # Kernel main
+│       └── kernel_asm.S  # Assembly routines
+└── p3-concurrent-channels/
+    ├── channel.c         # Channel implementation
+    ├── buffer.c          # Bounded buffer
+    ├── linked_list.c     # List for select()
+    └── stress.c          # Stress tests
 ```
